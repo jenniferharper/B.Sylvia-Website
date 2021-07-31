@@ -248,7 +248,7 @@ svg {
   #intro h2, #intro p {
     color: #fff; }
   #intro h2 {
-    margin: 30px 0; }
+    margin: 0px 0 30px -120px; }
   #intro .feature-cont {
     background-color: #f8c4d0; }
     #intro .feature-cont a.circle {
@@ -263,8 +263,8 @@ svg {
     z-index: -1;
     background-color: #5F0017;
     width: calc(100% - 8%);
-    left: 0;
-    right: 8%;
+    left: 4%;
+    right: 4%;
     height: 100%;
     top: 0; }
     @media (max-width: 1200px) {
@@ -284,7 +284,7 @@ svg {
     #intro {
       padding: 8% 0; }
       #intro .row.inner {
-        padding: 40px 20px 0; } }
+        padding: 20px 20px 0; } }
 
 /**********usp*****************/
 .usp {

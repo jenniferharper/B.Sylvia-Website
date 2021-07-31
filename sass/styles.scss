@@ -273,7 +273,7 @@ overflow:visible;
 	h2, p{
 		color:#fff;
 	}
-	h2{margin:30px 0}
+	h2{margin:0px 0 30px -120px}
 
 	.feature-cont{
 		background-color:$main;
@@ -289,8 +289,8 @@ overflow:visible;
 		background-color:$darkest;
 		
 		width:calc(100% - 8%);
-		left:0;
-		right:8%;
+		left:4%;
+		right:4%;
 		height:100%;
 		top:0;
 		@media(max-width:1200px){
@@ -311,7 +311,7 @@ overflow:visible;
 
 	@media (min-width:992px){
 		padding:8% 0;
-		.row.inner {padding:40px 20px 0}
+		.row.inner {padding:20px 20px 0}
 		
 	}
 
