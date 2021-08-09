@@ -1,13 +1,25 @@
 @import url("https://d2ta2fpo91apla.cloudfront.net/fontawesome-free-5.9.0-web/css/all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Poppins:300,400,700|Raleway:300,400,600&display=swap");
-html, body {
-  height: 100%;
+html,
+body {
+  position: relative;
+  height: auto;
   margin: 0;
   max-width: 2000px;
   margin: 0 auto;
-  min-height: 100px;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
   color: #263238; }
+
+html {
+  overflow: scroll;
+  overflow-x: hidden; }
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */ }
 
 p {
   font-family: "Raleway", sans-serif;
@@ -378,6 +390,14 @@ svg {
 .testimonials {
   background-color: #5F0017;
   position: relative; }
+  .testimonials::after {
+    display: block;
+    position: absolute;
+    content: '';
+    background-color: #5F0017;
+    width: 100%;
+    height: 50vh;
+    left: 0; }
   .testimonials h2 {
     color: #fff; }
   .testimonials .row:first-of-type {
@@ -417,15 +437,6 @@ svg {
     .testimonials .scroll-left {
       -ms-flex-wrap: nowrap !important;
       flex-wrap: nowrap !important; } }
-  .testimonials::after {
-    display: block;
-    position: absolute;
-    content: '';
-    background-color: #fff;
-    width: 100%;
-    height: 150px;
-    left: 0;
-    bottom: 0; }
 
 .touch .testimonials {
   padding-bottom: 100px;
@@ -645,5 +656,95 @@ svg {
   width: 0;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.8); }
+
+.bg-img {
+  height: 100%;
+  min-height: 50vh;
+  width: 100%;
+  background-image: url("../img/0007.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover; }
+  @media (min-width: 1024px) {
+    .bg-img {
+      min-height: 70vh; } }
+  @media (min-height: 1025px) {
+    .bg-img {
+      min-height: 40vh; } }
+
+.slider {
+  margin: 60px 0;
+  position: relative; }
+  .slider .wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    z-index: 1;
+    position: relative; }
+    .slider .wrapper .section {
+      width: 100vw;
+      min-height: 100vh;
+      transition: color 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 0;
+      color: white; }
+      .slider .wrapper .section.exception {
+        width: 50vw; }
+      .slider .wrapper .section.buffer {
+        width: 5vw;
+        background-color: transparent; }
+      .slider .wrapper .section.color-one .content {
+        background-color: #f8c4d0;
+        color: #263238; }
+      .slider .wrapper .section .content {
+        transition: all 0.5s ease-in-out;
+        background-color: #c31e22;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0px 10px;
+        height: calc(100% + 120px);
+        padding: 40px;
+        text-align: center;
+        align-items: center;
+        width: 100%; }
+        .slider .wrapper .section .content .content-text {
+          margin: 20px 0; }
+        .slider .wrapper .section .content .responsive-img img {
+          max-width: 100px; }
+        .slider .wrapper .section .content.imgFeature {
+          padding: 0; }
+        .slider .wrapper .section .content.imgFeature {
+          padding: 0; }
+          .slider .wrapper .section .content.imgFeature .img-one.bg-img {
+            background-image: url("../img/0007.jpg");
+            background-repeat: no-repeat;
+            background-position: 50% 0;
+            background-size: cover; }
+          .slider .wrapper .section .content.imgFeature .img-two.bg-img {
+            background-image: url("../img/0051.jpg");
+            background-repeat: no-repeat;
+            background-position: 50% 0;
+            background-size: cover; }
+          .slider .wrapper .section .content.imgFeature .img-three.bg-img {
+            background-image: url("../img/008.jpg");
+            background-repeat: no-repeat;
+            background-position: 50% 0;
+            background-size: cover; }
+      @media (min-width: 992px) {
+        .slider .wrapper .section {
+          width: 50vw; } }
+      @media (min-width: 1240px) {
+        .slider .wrapper .section {
+          width: calc(33.333vw + 20px); } }
+      .slider .wrapper .section:first-of-type .content {
+        margin-left: 0; }
+      .slider .wrapper .section:last-of-type .content {
+        margin-right: 0; }
+
+.is-active .content {
+  height: 95% !important; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -4,14 +4,26 @@
 @import url('https://d2ta2fpo91apla.cloudfront.net/fontawesome-free-5.9.0-web/css/all.min.css');
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Poppins:300,400,700|Raleway:300,400,600&display=swap');
 
-html, body {
-    height: 100%;
-	margin: 0;
-	max-width:2000px;
-	margin:0 auto;
-	min-height:100px;
-	-webkit-overflow-scrolling: touch;
-	color:$dark;
+html,
+body {
+  position: relative;
+  height: auto;
+  margin: 0;
+  max-width: 2000px;
+  margin: 0 auto;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+color:$dark
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 
@@ -435,6 +447,15 @@ overflow:visible;
 
 
 .testimonials{
+	&::after{
+		display: block;
+		position: absolute;
+		content:'';
+		background-color: $darkest;
+		width:100%;
+		height:50vh;
+		left:0;
+	}
 	background-color:$darkest;
 	position: relative;
 	h2{color:#fff}
@@ -488,16 +509,7 @@ overflow:visible;
 		}
 	}
 
-	&::after{
-		display: block;
-		position: absolute;
-		content:'';
-		background-color: #fff;
-		width:100%;
-		height:150px;
-		left:0;
-		bottom:0;
-	}
+
 }
 
 // touch screen
@@ -753,3 +765,101 @@ overflow:visible;
 //   .is-loading {
 // 	overflow: hidden; }
 
+
+/////////////////// CUSTOMISE//////////////////
+
+.bg-img {
+	height:100%;
+	min-height: 50vh;
+	width:100%;
+	@media (min-width: 1024px) {
+	  min-height: 70vh;
+	}
+	@media (min-height: 1025px) {
+	  min-height: 40vh;
+	}
+	@include bg-img(url("../img/0007.jpg"), 50%, 50%);
+  }
+
+.slider{
+	// margin matches container height extra
+	margin:60px 0;
+	position: relative;
+	.wrapper{
+	  display: flex;
+	  flex-wrap: nowrap;
+	  z-index: 1;
+	  position: relative;
+	  .section { 
+		width: 100vw;
+		min-height:100vh;
+		transition: color 0.3s;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		padding:0;
+		color: white;
+		&.exception{
+		  width:50vw;
+		}
+		&.buffer{
+		  width: 5vw;
+		  background-color: transparent;
+		}
+		&.color-one .content{
+		  background-color: $main;
+		  color: $dark;
+		}
+ 
+		.content{
+		transition:all 0.5s ease-in-out;
+		  background-color: $other;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  margin: 0px 10px;
+		  height: calc(100% + 120px);
+		  padding: 40px;
+		  text-align: center;
+		  align-items: center;
+		  width: 100%;
+		  .content-text{
+			margin:20px 0;
+		  }
+		  .responsive-img img{
+			max-width:100px;
+		  }
+		  &.imgFeature{
+			padding:0;
+		  }
+		  &.imgFeature{
+			padding:0;
+			.img-one.bg-img {
+			  @include bg-img(url("../img/0007.jpg"), 50%, 0);
+			}
+			.img-two.bg-img {
+			  @include bg-img(url("../img/0051.jpg"), 50%, 0);
+			}
+			.img-three.bg-img {
+			  @include bg-img(url("../img/008.jpg"), 50%, 0);
+			}
+		  }
+		}  
+  
+  
+		@media (min-width:992px){width:50vw} 
+		@media (min-width:1240px){width:calc(33.333vw + 20px)} 
+  
+		&:first-of-type{.content{margin-left:0;}}
+		&:last-of-type{.content{margin-right:0;}}
+	  }
+	} 
+  }
+
+.is-active{
+	.content{
+		height:95% !important;
+
+	}
+}
