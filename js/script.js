@@ -9,7 +9,7 @@ var boxes = document.querySelectorAll('.section');
 		},
 		// ease: "none",
 		scrollTrigger: {
-			trigger: container,
+			trigger: ".slider",
 			start: "center center",
 			end: function(){  
 				return "+=" + container[0].scrollWidth;
@@ -17,6 +17,7 @@ var boxes = document.querySelectorAll('.section');
 			scrub: true,
 			pin: 'body',
 			toggleClass: "is-active",
+			// markers:true,
 		}
 	});
 
@@ -34,7 +35,6 @@ var boxes = document.querySelectorAll('.section');
 			trigger: section,
 			start: 'top center',
 			toggleActions: 'play none none none', 
-			markers:true,
 		}
 	}); 
 	tl.to(cov,{background:"#000000"},0)
