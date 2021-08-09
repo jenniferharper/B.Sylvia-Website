@@ -493,6 +493,7 @@ svg {
           width: calc(33.333% + 20px); } }
 
 .slider.is-active .wrapper {
+  margin-top: -2px;
   transform: scale(1);
   width: 100%;
   transition: all 0.3s ease-in-out;

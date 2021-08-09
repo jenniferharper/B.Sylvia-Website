@@ -484,6 +484,7 @@ overflow:visible;
   }
 
 .slider{
+
     position: relative;
 	.wrapper{
 	transform: scale(0.85);
@@ -563,8 +564,8 @@ overflow:visible;
 
   /////aka .slide .wrapper
 .slider.is-active{
-
 	.wrapper{
+		margin-top: -2px;
 		transform: scale(1);
 		width: 100%;
 		transition: all 0.3s ease-in-out;
@@ -575,6 +576,13 @@ overflow:visible;
 		height:95% !important;
 	}
 }
+
+
+/////////////////////////////////////////////
+
+
+
+
 
 // touch screen
 // .touch {}
@@ -806,5 +814,6 @@ overflow:visible;
   
 //   .is-loading {
 // 	overflow: hidden; }
+
 
 

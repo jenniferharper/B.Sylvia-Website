@@ -1,25 +1,36 @@
 
 gsap.registerPlugin(ScrollTrigger);
+
+
+////////// slider
 var container = $('.slider .wrapper');
 var boxes = document.querySelectorAll('.section');
 
-	gsap.to(boxes, {
+let tlSlider = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".slider",
+		start: "center center",
+		end: function(){  
+			return "+=" + container[0].scrollWidth;
+		},
+		scrub: true,
+		pin: true,
+		toggleClass: "is-active",
+		refreshPriority: 1,
+	}
+});
+
+refresher();
+function refresher(){
+	gsap.set(boxes, {clearProps:"all"}); 
+	tlSlider.clear();
+	tlSlider.to(boxes, {		
 		x: function(){  
 		return -(container[0].scrollWidth - document.documentElement.clientWidth) + "px";
 		},
-		// ease: "none",
-		scrollTrigger: {
-			trigger: ".slider",
-			start: "center center",
-			end: function(){  
-				return "+=" + container[0].scrollWidth;
-			},
-			scrub: true,
-			pin: 'body',
-			toggleClass: "is-active",
-			// markers:true,
-		}
 	});
+};
+
 
 
 
@@ -41,6 +52,7 @@ var boxes = document.querySelectorAll('.section');
 	tl.from(cov, { scaleX: 0, transformOrigin: "bottom", duration:0.8},0);
 	tl.from(img,{ opacity:0, delay:0.3, duration:1.5 },0);
 });
+
 
 // image zoom
 $(".full-img-feature").each(function() {
@@ -224,3 +236,19 @@ gsap.utils.toArray('.up-text').forEach(section => {
 // })(jQuery);
 
 
+
+
+
+
+
+
+
+var windowWidth = $(window).width();
+$(window).resize(function(){	
+	if ($(window).width() != windowWidth) {
+	windowWidth = $(window).width();
+	
+	// refresher.clear();
+	refresher();	
+	}
+});
