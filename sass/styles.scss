@@ -98,6 +98,7 @@ a,p,li {
   z-index: 1;
   line-height: 1.7em;
   max-width: 650px;
+  margin: 10px auto;
 }
 
 p,p span,p a,a,ul,li {
@@ -423,7 +424,7 @@ svg {
   display: flex;
   justify-content: center;
   position: fixed;
-  z-index: 100;
+  z-index: 10;
   width: 100%;
   background-color: transparent;
   padding: 0;
@@ -675,7 +676,7 @@ svg{
 
 /*************hero******************/
 .hero{
-	padding: $md 0;
+	padding: $md $sm;
 	position: relative;
   .row{
     align-items: center;
@@ -717,6 +718,11 @@ svg{
 		p{color:#fff; margin: 20px;}
     @media (min-width:576px){
       background-color: $main-dark;
+    }
+    &.after{
+      height: 100%;
+      width:50%;
+      background: red;
     }
 	}
 
@@ -1221,3 +1227,35 @@ svg{
 	100%   { transform: scale(1) }
   }
 
+
+
+  .c-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    &__count {
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      font-size: 100px;
+
+    }
+    &__progress {
+      @include bg-img(url("../img/0007.jpg"), 50%, 0);
+      // background: $main;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  
