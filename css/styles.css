@@ -153,7 +153,8 @@ h3 {
   font-size: 30px;
   font-weight: 700;
   margin: 20px 0;
-  font-family: "Pacifico", cursive; }
+  font-family: "Pacifico", cursive;
+  line-height: 1.6em; }
 
 .text-uppercase {
   font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -356,22 +357,26 @@ svg {
   .navbar .navbar-toggler:focus {
     box-shadow: none; }
   .navbar .navbar-toggler .navbar-toggler-icon {
-    color: #fff;
-    height: auto; }
+    color: #5F0017;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    transform-origin: 50% 50%;
+    margin-right: 10px; }
   .navbar .navbar-collapse {
     justify-content: flex-end; }
-    .navbar .navbar-collapse ul.navbar-nav a.nav-link {
-      padding: 10px 14px; }
   @media (max-width: 992px) {
     .navbar {
       height: 60px;
-      background-color: purple; }
+      background-color: #fff; }
       .navbar .myLogo {
         top: 6px;
         max-width: unset;
         max-height: 50px; }
       .navbar .navbar-toggler {
-        padding: 0 10px;
+        padding: 0;
         font-size: 30px;
         line-height: 1;
         background-color: transparent;
@@ -384,7 +389,7 @@ svg {
         align-items: center; }
       .navbar .navbar-collapse {
         margin-top: -1px;
-        background-color: purple; }
+        background-color: #fff; }
       .navbar ul.navbar-nav {
         padding: 0px 20px 20px;
         text-align: center;
@@ -396,7 +401,7 @@ svg {
           max-width: 160px;
           margin: 0 auto; } }
 
-.open .navbar-toggler-icon i {
+.open .navbar-toggler-icon {
   transform: rotate(-90deg); }
 
 @media (min-width: 992px) {
@@ -529,7 +534,8 @@ svg {
       padding-bottom: 0;
       text-align: center; }
       .hero .hero-intro {
-        align-items: center; } }
+        align-items: center;
+        padding: 0 30px; } }
 
 #intro {
   z-index: 1;
@@ -543,9 +549,13 @@ svg {
       align-items: center;
       flex-direction: column;
       height: 100%;
-      justify-content: space-around; }
+      justify-content: space-around;
+      text-align: center; }
   #intro .row.inner div:last-of-type {
     padding-right: 0; }
+    @media (max-width: 576px) {
+      #intro .row.inner div:last-of-type {
+        padding-left: 0; } }
   #intro::after {
     display: block;
     position: absolute;
@@ -581,7 +591,7 @@ svg {
 
 /**********usp*****************/
 .usp {
-  padding: 6% 0 4% 0; }
+  padding: 8%; }
   .usp h4, .usp p {
     text-align: center;
     color: #2d2929; }
@@ -687,6 +697,9 @@ svg {
     right: 4%;
     height: 100vh;
     top: 0; }
+  @media (max-width: 768px) {
+    .testimonials .text-center {
+      padding: 0 60px; } }
 
 .slider {
   position: relative; }

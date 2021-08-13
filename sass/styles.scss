@@ -197,6 +197,7 @@ h3 {
   font-weight: 700;
   margin: 20px 0;
   font-family:$other-font;
+  line-height: 1.6em;
 }
 
 .text-uppercase{font-family:$header-font;font-weight: bold;}
@@ -449,19 +450,20 @@ svg {
       box-shadow: none;
     }
     .navbar-toggler-icon {
-      color: #fff;
-      height: auto;
+      color: $main-dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height:60px;
+      transform-origin: 50% 50%;
+      margin-right: 10px;
     }
   }
 
   // hamburger down
   .navbar-collapse {
     justify-content: flex-end;
-    ul.navbar-nav {
-      a.nav-link {
-        padding: 10px 14px;
-      }
-    }
   }
 
   ///START MEDIA QUERIES////
@@ -470,7 +472,7 @@ svg {
   @media (max-width: 992px) {
     height: 60px;
     ///mobile navigation color
-    background-color:purple;
+    background-color:$white;
     .myLogo{
       top:6px;
       max-width: unset;
@@ -478,7 +480,7 @@ svg {
     }
     .navbar-toggler {
       ////hamburger button/wrapper
-      padding: 0 10px;
+      padding: 0;
       font-size: 30px;
       line-height: 1;
       background-color: transparent;
@@ -494,7 +496,7 @@ svg {
     .navbar-collapse {
        ///mobile navigation dropdown menu
       margin-top: -1px;
-      background-color:purple;
+      background-color:$white;
     }
 
     ul.navbar-nav {
@@ -518,7 +520,7 @@ svg {
 ////OPEN ROTATE HAMBURGER
 .open {
   ////rotate icon on open
-  .navbar-toggler-icon i {
+  .navbar-toggler-icon {
     transform: rotate(-90deg);
   }
 }
@@ -728,6 +730,7 @@ svg{
     text-align: center;
     .hero-intro{
       align-items: center;
+      padding: 0 30px;
     }
   }
 
@@ -751,11 +754,15 @@ svg{
       flex-direction: column;
       height: 100%;
       justify-content: space-around;
+      text-align: center;
 
     }
 	}
   .row.inner div:last-of-type{
     padding-right: 0;
+    @media (max-width:576px){
+      padding-left: 0;
+    }
   }
 
 	&::after{
@@ -800,7 +807,7 @@ svg{
 
 /**********usp*****************/
 .usp{
-	padding:6% 0 4% 0;
+	padding:$md;
 
 	h4,p{
 		text-align: center;
@@ -934,6 +941,11 @@ svg{
 		height:100vh;
 		top:0;
 	}
+  @media (max-width:768px){
+    .text-center{
+      padding:0 60px;
+    }
+  }
 }
 
 

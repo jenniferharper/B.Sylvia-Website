@@ -115,8 +115,9 @@ gsap.utils.toArray('.up-text').forEach(section => {
 		ease:Back.easeOut,
 		scrollTrigger: {
 		trigger: section,
-		start: 'top bottom',
+		start: 'top bottom+=100',
 		toggleActions: 'play none none none',
+
 		}
 	});
 });
