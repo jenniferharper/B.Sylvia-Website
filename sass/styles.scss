@@ -409,7 +409,7 @@ svg {
   position: fixed;
   top: 5px;
   left:10px;
-  height: 75px;
+  height: 65px;
   @include transition;
   .logo-circle{
     fill:$main;	
@@ -427,14 +427,31 @@ svg {
   z-index: 10;
   width: 100%;
   background-color: transparent;
-  padding: 0;
-  height: 85px;
+  padding: 5px;
   top: 0;
   @include transition;
 
   .container-fluid {
     align-items: flex-start;
     padding: 0;
+  }
+  .navbar-nav{
+    padding-right:20px;
+  }
+  li.nav-item {
+    margin: 0 10px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    &:nth-of-type(2) a{
+      border: 1px solid #000;
+      &:hover{border-color:$secondary}   
+    }
+    a{display: flex;}
+    i{
+      color: $main;
+      &:hover{color:$secondary}    
+    }
   }
 
   // logo
@@ -542,15 +559,14 @@ svg {
       }
     }
     .nav--scrolled:not(.nav--up) {
-      height:50px;
+      height:auto;
       background: $white;
+      box-shadow: $shadow;
+      @include transition;
       ul.navbar-nav {padding-top:0; @include transition;}
       .myLogo{
-        height: 40px;
         transition: transform 0.3s ease-in;
-        @include transition;
       }
-      @include transition;
     }
   }
 

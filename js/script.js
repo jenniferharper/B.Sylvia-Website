@@ -192,7 +192,7 @@ function loadComplete() {
   });
   tlEnd
       .to('html',{overflow:'visible'},0)
-      .to(".c-preloader", 0.5, { yPercent:-100, opacity:0, transformOrigin: "center top"},0)
+      .to(".c-preloader", 0.5, { yPercent:-101, opacity:0, transformOrigin: "center top"},0)
 	  .to('.hero',0.5,  {yPercent:0},'-=0.5')
 }
 

@@ -324,7 +324,7 @@ svg {
   position: fixed;
   top: 5px;
   left: 10px;
-  height: 75px;
+  height: 65px;
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
@@ -342,8 +342,7 @@ svg {
   z-index: 10;
   width: 100%;
   background-color: transparent;
-  padding: 0;
-  height: 85px;
+  padding: 5px;
   top: 0;
   transition-property: all;
   transition-duration: 0.3s;
@@ -351,6 +350,23 @@ svg {
   .navbar .container-fluid {
     align-items: flex-start;
     padding: 0; }
+  .navbar .navbar-nav {
+    padding-right: 20px; }
+  .navbar li.nav-item {
+    margin: 0 10px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center; }
+    .navbar li.nav-item:nth-of-type(2) a {
+      border: 1px solid #000; }
+      .navbar li.nav-item:nth-of-type(2) a:hover {
+        border-color: #c31e22; }
+    .navbar li.nav-item a {
+      display: flex; }
+    .navbar li.nav-item i {
+      color: #f8c4d0; }
+      .navbar li.nav-item i:hover {
+        color: #c31e22; }
   .navbar .navbar-brand {
     width: 100px;
     position: relative;
@@ -423,8 +439,9 @@ svg {
         transition-timing-function: ease-in; }
 
   .nav--scrolled:not(.nav--up) {
-    height: 50px;
+    height: auto;
     background: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.16);
     transition-property: all;
     transition-duration: 0.3s;
     transition-timing-function: ease-in; }
@@ -434,11 +451,7 @@ svg {
       transition-duration: 0.3s;
       transition-timing-function: ease-in; }
     .nav--scrolled:not(.nav--up) .myLogo {
-      height: 40px;
-      transition: transform 0.3s ease-in;
-      transition-property: all;
-      transition-duration: 0.3s;
-      transition-timing-function: ease-in; } }
+      transition: transform 0.3s ease-in; } }
 @keyframes move-logo {
   0% {
     transform: scale(1); }
